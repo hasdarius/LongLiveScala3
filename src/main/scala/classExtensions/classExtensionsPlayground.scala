@@ -11,4 +11,6 @@ object classExtensionsPlayground extends App :
 
   val secondPowerFunction: Int => Int = x => x * x
   println(secondPowerFunction.derivative(5)(10))
+
+  println(isEmail("darius.has@accesa.eu"))
 end classExtensionsPlayground
