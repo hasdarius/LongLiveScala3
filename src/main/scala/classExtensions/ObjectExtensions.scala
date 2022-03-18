@@ -7,6 +7,7 @@ object ObjectExtensions:
     def toSnakeCase = string.replaceAll("([a-z])([A-Z])", "$1_$2").toLowerCase
     def isEmail = string.matches("""^[a-zA-Z0-9\.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$""".r.toString)
     def isNumber = string.matches("([1-9])([0-9]*)")
+    def protectedToInt = if string.isNumber then Some(string.toInt) else None
   }
 
   extension (person: Person) {

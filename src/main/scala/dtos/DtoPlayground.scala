@@ -20,7 +20,7 @@ object DtoPlayground extends App {
 
 
   // DTO conversion
-  val personDTO: PersonDTO = person
+  val personDTO: PersonDto = person
   println(personDTO)
 
 
