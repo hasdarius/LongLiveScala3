@@ -19,6 +19,16 @@ object ObjectExtensions:
       ((x: Int) => (f(x + dx) - f(x)) / dx)
   }
 
+  extension (number: Int) {
+    def isPrime =
+      number match {
+        case negativeNumber if negativeNumber < 2 => false
+        case two if two == 2 => true
+        case _ => !(2 until number).exists(number % _ ==0)
+
+      }
+  }
+
   // Scala2 syntax equivalent
   /* 
   implicit class StringExtension(string: String){

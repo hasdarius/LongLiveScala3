@@ -10,6 +10,7 @@ case object DbConnection:
     Thread.sleep(500)
     isConnected = Random.nextBoolean
     if isConnected then println("Connection successful") else println("Connection unsuccessful")
+    isConnected
   end connect
 
   def disconnect =

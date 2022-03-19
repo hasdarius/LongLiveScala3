@@ -4,7 +4,7 @@ import dtos.{Person, PersonDto}
 
 import scala.util.Random
 
-protected case object PersonRepository:
+case object PersonRepository:
 
   private var personList: List[Person] = List.empty
 
@@ -23,7 +23,7 @@ protected case object PersonRepository:
   def updatePerson(person: Person, oldPerson: Person): Option[Int] =
     if personList contains oldPerson then
       val id = person.id
-      val newPerson = Person(id, person.firstName, person.lastName, person.coursesEnrolled)
+      val newPerson = Person(id, person.firstName, person.lastName, person.age, person.coursesEnrolled)
       personList = newPerson :: personList.filter(_.id != newPerson.id)
       Some(id)
     else

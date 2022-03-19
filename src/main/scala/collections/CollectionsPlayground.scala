@@ -43,8 +43,8 @@ object CollectionsPlayground extends App :
   val zippedList = appendedList zip redundatList
   println(zippedList)
 
-  val person1 = Person(1, "Darius", "Has", List(Course(1, "Scala Basics", 30l, "")))
-  val person2 = Person(2, "Marius", "Has", List(Course(1, "Scala Basics", 30l, "")))
+  val person1 = Person(1, "Darius", "Has", 21, List(Course(1, "Scala Basics", 30, "")))
+  val person2 = Person(2, "Marius", "Has",21, List(Course(1, "Scala Basics", 30, "")))
   val personList = List(person2, person1)
   println(personList)
   println(personList.sortBy(_.id))
