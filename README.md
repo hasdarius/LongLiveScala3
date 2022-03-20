@@ -2,7 +2,7 @@
 A dive into the world of Scala.
 After working in Scala for a while now, I decided to present Scala's best functionalities when compared to its other JVM sisters (mainly Java). 
 I tackled 12 different topics in order to present Scala's strong (and weak points):
-1. Intro about the language: history, motivation, current usages
+1. Intro about the language: history, motivation, current usages. How to think Scala style.
 2. DTOs in Scala
 3. Collections in Scala (mainly list, set and map)
 4. Interfaces in Scala (inheritance, behavior)
