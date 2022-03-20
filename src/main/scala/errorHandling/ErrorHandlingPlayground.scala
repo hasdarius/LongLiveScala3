@@ -15,7 +15,7 @@ object ErrorHandlingPlayground extends App :
   }
 
   // new way of handling errors
-  println("\n----------Handling errors scala style (or FP tyle)--------------")
+  println("\n----------Handling errors scala style (or FP style)--------------")
   // Enter Try
   val protectedDivision = (x: Int, y: Int) => Try(x / y)
   val simpleDivision = protectedDivision( 17, 0)

@@ -5,9 +5,7 @@ case class File(filePath: String, content: String) extends FileSystemEntity(file
 
   override def close(): Unit = println(s"Closing the file {$filePath}")
 
-  override def delete(): Unit =
-    println(s"Deleted file: ${getFileName()}")
-  end delete
+  override def delete(): Unit = println(s"Deleted file: ${getFileName()}")
 
   def getFileName() = filePath.substring(filePath.lastIndexOf("/") + 1)
 end File
