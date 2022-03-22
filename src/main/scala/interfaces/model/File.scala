@@ -1,6 +1,6 @@
-package interfaces
+package interfaces.model
 
-case class File(filePath: String, content: String) extends FileSystemEntity(filePath) :
+case class File(val filePath: String, content: String) extends FileSystemEntity(filePath) :
   override def open(): Unit = println(s"File :${getFileName()}:\n${content}")
 
   override def close(): Unit = println(s"Closing the file {$filePath}")

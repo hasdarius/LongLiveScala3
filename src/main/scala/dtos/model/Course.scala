@@ -1,8 +1,10 @@
-package dtos
+package dtos.model
+
+import dtos.model.Course
 
 import scala.util.Random
 
-case class Course(id: Int, name: String, duration: Int, content: String)
+case class Course(val id: Int, val name: String, val duration: Int, val content: String)
 
 object Course:
   def generateRandomCoursesList(): List[Course] =

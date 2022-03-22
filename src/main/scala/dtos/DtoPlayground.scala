@@ -1,5 +1,8 @@
 package dtos
 
+import dtos.dto.PersonDto
+import dtos.model.{Course, Person, NormalPerson}
+
 object DtoPlayground extends App {
 
 
@@ -8,7 +11,7 @@ object DtoPlayground extends App {
   val normalPerson = NormalPerson(1, "Darius", "Has", 21, List.empty)
   // Why?
   // case classes have an apply method for instantiation:
-  // def apply(id: UUID, firstName: String, lastName: String, properties: List[Course]): Person = new Person(id: UUID, firstName: String, lastName: String, properties: List[Course])
+  // def apply(id: Int, firstName: String, lastName: String, properties: List[Course]): Person = new Person(id: UUID, firstName: String, lastName: String, properties: List[Course])
   // toString()
   println(s"Case class person: $person")
   println(s"Normal class person: $normalPerson")

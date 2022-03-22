@@ -1,6 +1,6 @@
 package classExtensions
 
-import dtos.Person
+import dtos.model.Person
 
 object ObjectExtensions:
   extension (string: String) {

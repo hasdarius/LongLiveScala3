@@ -1,13 +1,24 @@
 package favouriteFeatures
 
-import dtos.Person
-import interfaces.{File, FileSystemEntity, Folder}
+import dtos.model.Person
+import interfaces.model.{File, FileSystemEntity, Folder}
 
 import scala.annotation.tailrec
 import scala.util.matching.Regex
 
 
 object FavouritesPlayground extends App :
+
+
+  // Built in design patterns: we have Object that is an implementation of a Sigleton DP
+  // By means of default parameters and named parameters => Builder DP
+  println("Builder design pattern:")
+  println(Pizza())
+  println(Pizza(ingredients = List("ham")))
+  println(Pizza(base = "thin crust"))
+  println(Pizza(topping = "burrata"))
+  println(Pizza(topping = "burrata", base = "thin crust"))
+  println(Pizza(ingredients = List("ham", "mushrooms", "corn"), base = "deep dish"))
 
 
   // implementation of classical algorithms
@@ -39,8 +50,8 @@ object FavouritesPlayground extends App :
     case Folder(_, contentsList) => println(s"We can extract the elements: ${contentsList}")
   }
 
-  val timestampRegex: Regex = "([0-9]{2}):([0-9]{2}):([0-9]{2}).([0-9]{3})".r
-  "17:21:59.411" match {
+  val timestampRegex: Regex = "(\\d{2}):(\\d{2}):(\\d{2}).(\\d{3})".r
+  "08:30:00.000" match {
     case timestampRegex(hour, minutes, _, _) => println(s"It's $minutes minutes after $hour")
   }
 

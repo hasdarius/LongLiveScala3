@@ -1,4 +1,7 @@
-package dtos
+package dtos.dto
+
+import dtos.dto.PersonDto
+import dtos.model.Person
 
 import java.sql.Timestamp
 import java.util.UUID

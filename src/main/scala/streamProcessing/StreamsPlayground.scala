@@ -1,7 +1,7 @@
 package streamProcessing
 
-import dtos.Person
 import classExtensions.ObjectExtensions.*
+import dtos.model.Person
 
 import java.util.stream.Collector
 
@@ -26,7 +26,7 @@ object StreamsPlayground extends App :
   val personList = Person.generateTenRandomPersons()
   println("Generating 10 random people...\n")
   personList.foreach(println)
-  println("\nNow let's calculate average watch time...")
+  println("\nNow let's calculate average learning time...")
 
 
   // map, flatMap, filter vs Scala Stream API
@@ -37,14 +37,14 @@ object StreamsPlayground extends App :
   // View -> wrapper of a collection. Used for executing transformer operations on a collection lazily.
   // Reevaluated everytime the view is demanded/forced.
   // Construct only a proxy for the resulted collection.
-  // Construct result only when we have eager operations -> toList, toSeq, reduce...
+  // Construct result only when we have eager operations -> toList, toSeq, reduce, maxBy, sum...
   val elderPeopleWatchingTime = personList
     .view
     .filter(_.age > 50)
     .map(_.coursesEnrolled)
     .flatMap(list => list.map(_.duration))
     .reduce(_ + _) / personList.length
-  println(s"Average watching time for elder people: ${elderPeopleWatchingTime} minutes")
+  println(s"Average learning time for elder people: ${elderPeopleWatchingTime} minutes")
 
   val mostActiveElderPerson = personList
     .view

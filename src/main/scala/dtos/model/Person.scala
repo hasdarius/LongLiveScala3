@@ -1,4 +1,6 @@
-package dtos
+package dtos.model
+
+import dtos.model.{Course, Person}
 
 import scala.util.Random
 

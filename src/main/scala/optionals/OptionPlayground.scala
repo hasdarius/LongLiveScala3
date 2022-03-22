@@ -1,7 +1,8 @@
 package optionals
 
 import classExtensions.ObjectExtensions.*
-import dtos.{Person, PersonDto}
+import dtos.dto.PersonDto
+import dtos.model.Person
 
 import java.util.NoSuchElementException
 import scala.util.Random
@@ -18,20 +19,16 @@ object OptionPlayground extends App :
   println(intList.flatten)
 
   val newPerson = Person(1, "New", "Person", 18, List.empty)
-  var result = PersonRepository.getPersonById(newPerson.id).orElse(PersonRepository.addNewPerson(newPerson)) // chained calls using Option
+  def getOrInsertPerson(newPerson: Person) : Unit =
+    val potentiallyNewPerson = PersonRepository.getPersonById(newPerson.id).orElse(PersonRepository.addNewPerson(newPerson)) // chained calls using Option
+    potentiallyNewPerson match {
+      case Some(number: Int) => println(s"Person with id ${number} has been created.")
+      case Some(person: Person) => println(s"Person ${person} has been retrieved from repository.")
+      case _ => println(s"Person does not exist, but was unable to create it.")
+    }
 
-  result match {
-    case Some(number: Int) => println(s"Person with id ${number} has been created.")
-    case Some(person: Person) => println(s"Person ${person} has been retrieved from repository.")
-    case _ => println(s"Person does not exist, but was unable to create it.")
-  }
-
-  result = PersonRepository.getPersonById(newPerson.id).orElse(PersonRepository.addNewPerson(newPerson)) // chained calls using Option
-  result match {
-    case Some(number: Int) => println(s"Person with id ${number} has been created.")
-    case Some(person: Person) => println(s"Person ${person} has been retrieved from repository.")
-    case _ => println(s"Person does not exist, but was unable to create it.")
-  }
+  getOrInsertPerson(newPerson)
+  getOrInsertPerson(newPerson)
   println(PersonRepository.getPersons)
 
   // Either from Option

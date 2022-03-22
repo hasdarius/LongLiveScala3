@@ -1,6 +1,7 @@
 package optionals
 
-import dtos.{Person, PersonDto}
+import dtos.dto.PersonDto
+import dtos.model.Person
 
 import scala.util.Random
 
@@ -29,8 +30,8 @@ case object PersonRepository:
     else
       None
   end updatePerson
-  
+
   def getPersons = personList
-  
+
 
 end PersonRepository

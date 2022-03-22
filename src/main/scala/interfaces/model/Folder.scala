@@ -1,7 +1,8 @@
-package interfaces
+package interfaces.model
 
 case class Folder(path: String, var childrenFileSystemObjects: List[FileSystemEntity]) extends FileSystemEntity(path) :
   override def open(): Unit =
+    println("Printing contents:")
     childrenFileSystemObjects.foreach {
       case folder: Folder => println(s"Folder: ${folder.path.diff(this.path)}")
       case file: File => println(s"File: ${file.getFileName()}")

@@ -1,6 +1,7 @@
 package collections
 
-import dtos.{Course, Person}
+import dtos.model.Person
+import dtos.model.{Course, Person}
 
 object CollectionsPlayground extends App :
 
