@@ -1,4 +1,4 @@
-package interfaces.model.typeClasses
+package interfaces.model
 
 trait Summable[A] :
   def sumElements(list: List[A]): A

@@ -1,7 +1,7 @@
 package interfaces
 
-import interfaces.model.{File, FileSystemEntity, Folder}
-import interfaces.model.typeClasses._
+import interfaces.model._
+
 import scala.collection.mutable
 
 object InterfacesPlayground extends App :
