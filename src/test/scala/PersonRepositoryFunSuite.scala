@@ -15,6 +15,7 @@ class PersonRepositoryFunSuite extends AnyFunSuite with Matchers with BeforeAndA
   after {
     PersonRepository.deleteById(testPerson.id)
   }
+  
   test("It should already have one Person inserted") {
     PersonRepository.getPersons.size shouldBe 1
     assert(PersonRepository.getPersons.contains(testPerson))

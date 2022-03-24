@@ -10,7 +10,7 @@ object DtoPlayground extends App {
   val person = Person(1, "Darius", "Has", 21, List(Course(1, "Scala Basics", 30, "")))
   val normalPerson = NormalPerson(1, "Darius", "Has", 21, List.empty)
   // Why?
-  // case classes have an apply method for instantiation:
+  // case classes (and starting from Scala 3, simple classes also) have an apply method for instantiation:
   // def apply(id: Int, firstName: String, lastName: String, properties: List[Course]): Person = new Person(id: UUID, firstName: String, lastName: String, properties: List[Course])
   // toString()
   println(s"Case class person: $person")

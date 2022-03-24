@@ -41,7 +41,7 @@ object CollectionsPlayground extends App :
   println(appendedList takeWhile (_ < 6))
   val redundatList = List.fill(10)("Scala Rocks")
   println(redundatList)
-  val zippedList = appendedList zip redundatList
+  val zippedList = appendedList zip redundatList  // can write infix style, looks like natural language
   println(zippedList)
 
   val person1 = Person(1, "Darius", "Has", 21, List(Course(1, "Scala Basics", 30, "")))

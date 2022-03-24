@@ -1,6 +1,7 @@
 package favouriteFeatures
 
 import dtos.model.Person
+import favouriteFeatures.typeClasses.comparable.*
 import interfaces.model.{File, FileSystemEntity, Folder}
 
 import scala.annotation.tailrec
@@ -20,8 +21,12 @@ object FavouritesPlayground extends App :
   println(Pizza(topping = "burrata", base = "thin crust"))
   println(Pizza(ingredients = List("ham", "mushrooms", "corn"), base = "deep dish"))
 
+  // type classes
+  println(MyComparator.compareElements("Darius", "Has")(StringLengthComparable))
+  println(MyComparator.compareElements(File("file1", "This is my content"), File("file2", "This is my content. It is bigger")))
 
-  // implementation of classical algorithms
+
+  // Algorithms: implementation of classical algorithms
   def factorial(n: Int): BigInt =
     @tailrec
     def factorialHelper(n: Int, accumulator: BigInt = 1): BigInt =
@@ -60,5 +65,6 @@ object FavouritesPlayground extends App :
   val add: Int => (Int => Int) = firstNumber => secondNumber => firstNumber + secondNumber
   val addTo5 = add(5)
   println(addTo5(3))
-  
+
+
 end FavouritesPlayground
